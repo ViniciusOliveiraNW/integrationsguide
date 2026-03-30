@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia Prático de Integrações</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAV (fixed, separada do hero) -->
+  <nav class="nav">
+    <div class="logo">
+      <span>Guia de Integrações</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#parte1">O que é</a></li>
+      <li><a href="#parte2">Oportunidades</a></li>
+      <li><a href="#parte3">Como vender</a></li>
+      <li><a href="#parte4">Coletar dados</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-content">
+      <div class="hero-badge">Time Comercial & Suporte</div>
+      <h1 class="hero-title">
+        Guia Prático de<br />
+        <span class="highlight">Integrações</span>
+      </h1>
+      <p class="hero-subtitle">
+        Tudo que você precisa saber para identificar, explicar e vender integrações — sem precisar ser técnico.
+      </p>
+      <div class="hero-pills">
+        <span class="pill">Segunda via de boleto</span>
+        <span class="pill">Rastreio de carga</span>
+        <span class="pill">Antecipação FGTS</span>
+        <span class="pill">Agendamentos</span>
+      </div>
+      <a href="#parte1" class="cta-btn">Começar o guia →</a>
+    </div>
+    <div class="hero-visual">
+      <!-- Tab Selectors -->
+      <div class="demo-tabs">
+        <button class="demo-tab active" data-demo="boleto">📄 Boleto</button>
+        <button class="demo-tab" data-demo="rastreio">🚚 Rastreio</button>
+        <button class="demo-tab" data-demo="fgts">💰 FGTS</button>
+        <button class="demo-tab" data-demo="agenda">📅 Agenda</button>
+      </div>
+
+      <div class="chat-mockup">
+        <div class="chat-header">
+          <div class="chat-dot green"></div>
+          <span>ChatBot Omnichannel</span>
+        </div>
+
+        <!-- DEMO: Segunda via de boleto -->
+        <div class="chat-body demo-body active" id="demo-boleto">
+          <div class="msg bot">Olá! Como posso ajudar? 👋</div>
+          <div class="msg bot">1 - Solicitar boleto<br/>2 - Desbloquear por confiança<br/>3 - Solicitar 2ª via<br/>4 - Falar com atendente</div>
+          <div class="msg user">1</div>
+          <div class="msg bot">Por gentileza, informe seu CPF ou CNPJ.</div>
+          <div class="msg user">00011122233</div>
+          <div class="msg bot">Railane Santana, seguem os boletos:<br/><br/>1 - R$129,90 · Venc. 20/01/2025<br/>2 - R$79,90 · Venc. 21/01/2025</div>
+          <div class="msg user">1</div>
+          <div class="msg bot">Segue a linha digitável:<br/><br/><span style="color:var(--accent2);font-size:.78rem">2379 12345 67890 12345 6 12990 00001 23456</span><br/><br/>Pix copia e cola também enviado! ✅</div>
+        </div>
+
+        <!-- DEMO: Rastreio de carga -->
+        <div class="chat-body demo-body" id="demo-rastreio">
+          <div class="msg bot">Olá! Como posso ajudar? 👋</div>
+          <div class="msg bot">1 - Rastreie sua carga<br/>2 - Falar com SAC<br/>3 - Falar com Operacional<br/>4 - Falar com Financeiro</div>
+          <div class="msg user">1</div>
+          <div class="msg bot">Informe o CPF ou CNPJ do remetente ou destinatário.</div>
+          <div class="msg user">004****74</div>
+          <div class="msg bot">Informe a Nota Fiscal para rastreio da carga.</div>
+          <div class="msg user">11***8</div>
+          <div class="msg bot">📦 Data prevista: <strong>13/05/2025</strong><br/>Prazo: 1 dia(s)<br/><br/>✅ ENTREGA REALIZADA · 13/05 09:06<br/>📋 COMPROVANTE RECEBIDO · 13/05 09:06<br/>🔖 CTE AUTORIZADO SEFAZ · 12/05 18:07<br/>🚛 COLETA REALIZADA · 12/05 18:00</div>
+        </div>
+
+        <!-- DEMO: Antecipação FGTS -->
+        <div class="chat-body demo-body" id="demo-fgts">
+          <div class="msg bot">Bem-vindo(a) ao auto-atendimento! 👋</div>
+          <div class="msg bot"> Acesse o app FGTS e faça a autorização de consulta para o banco parceiro.<br/><br/><span style="font-size:.78rem;color:var(--text-muted)">[ OK, autorizado ] [ Não consegui ]</span></div>
+          <div class="msg user">OK, autorizado.</div>
+          <div class="msg bot">Informe seu CPF 👇</div>
+          <div class="msg user">44*****76</div>
+          <div class="msg bot">🎉 Encontramos valor no seu FGTS!<br/><br/><strong style="color:var(--accent)">Valor liberado: R$ 490,59</strong><br/><br/>Deseja prosseguir com a proposta?<br/><span style="font-size:.78rem;color:var(--text-muted)">[ SIM ] [ NÃO ]</span></div>
+          <div class="msg user">SIM</div>
+          <div class="msg bot">Seu contrato está pronto para assinatura digital!<br/><br/><span style="color:var(--accent2)">facta.ly/5f37a-...</span><br/><br/>Ao abrir o link, permita acesso à câmera e localização. ✅</div>
+        </div>
+
+        <!-- DEMO: Agendamentos -->
+        <div class="chat-body demo-body" id="demo-agenda">
+          <div class="msg bot">Olá! 👋 Bem-vindo ao agendamento online.</div>
+          <div class="msg bot">Escolha o tipo de serviço:<br/><br/>1 - Consulta<br/>2 - Retorno<br/>3 - Exame<br/>4 - Procedimento</div>
+          <div class="msg user">1</div>
+          <div class="msg bot">Ótimo! Qual data prefere?<br/><br/>📅 Próximas disponíveis:<br/>• Seg 14/04 · 09:00 ou 14:00<br/>• Ter 15/04 · 10:30 ou 16:00<br/>• Qua 16/04 · 08:00</div>
+          <div class="msg user">Seg 14/04 às 09:00</div>
+          <div class="msg bot">Confirme seu nome completo 👇</div>
+          <div class="msg user">Maria Silva</div>
+          <div class="msg bot">✅ Agendamento confirmado!<br/><br/><strong>Maria Silva</strong><br/>📅 Seg, 14 de abril · 09:00<br/>📍 Unidade Centro<br/><br/>Você receberá um lembrete 1h antes.</div>
+        </div>
+      </div>
+
+  </header>
+
+  <!-- ÍNDICE RÁPIDO -->
+  <section class="index-bar" >
+    <div class="container">
+      <div class="index-grid">
+        <a href="#parte1" class="index-item">
+          <span class="index-num">01</span>
+          <span class="index-label">O que é integração</span>
+        </a>
+        <a href="#parte2" class="index-item">
+          <span class="index-num">02</span>
+          <span class="index-label">Identificar oportunidades</span>
+        </a>
+        <a href="#parte3" class="index-item">
+          <span class="index-num">03</span>
+          <span class="index-label">Explicar & vender</span>
+        </a>
+        <a href="#parte4" class="index-item">
+          <span class="index-num">04</span>
+          <span class="index-label">Coletar informações</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 1: O QUE É INTEGRAÇÃO -->
+  <section id="parte1" class="section">
+    <div class="container">
+      <div class="section-tag">Parte 01</div>
+      <h2 class="section-title">O que é uma integração?</h2>
+      <p class="section-desc">Sem termos técnicos. Direto ao ponto.</p>
+
+      <div class="definition-card">
+        <div class="def-icon">🧩</div>
+        <div>
+          <div class="def-label">Definição simples</div>
+          <p class="def-text">"Integração é quando dois sistemas <strong>conversam automaticamente</strong>, sem precisar de uma pessoa fazendo o trabalho manual."</p>
+        </div>
+      </div>
+
+      <div class="before-after">
+        <div class="ba-card bad">
+          <div class="ba-header">
+            <span class="ba-icon">😓</span>
+            <span class="ba-title">Sem integração</span>
+          </div>
+          <ul class="ba-list">
+            <li><span class="step-num">1</span> Cliente faz um pedido</li>
+            <li><span class="step-num">2</span> Alguém copia as informações</li>
+            <li><span class="step-num">3</span> Cola em outro sistema</li>
+            <li><span class="step-num">4</span> Risco de erro humano</li>
+            <li><span class="step-num">5</span> Processo lento e caro</li>
+          </ul>
+        </div>
+        <div class="ba-arrow">→</div>
+        <div class="ba-card good">
+          <div class="ba-header">
+            <span class="ba-icon">🚀</span>
+            <span class="ba-title">Com integração</span>
+          </div>
+          <ul class="ba-list">
+            <li><span class="step-num green">1</span> Cliente faz um pedido</li>
+            <li><span class="step-num green">2</span> Sistema envia automaticamente</li>
+            <li><span class="step-num green">3</span> Tudo acontece em segundos</li>
+            <li><span class="step-num green">4</span> Zero erro manual</li>
+            <li><span class="step-num green">5</span> Equipe livre para o que importa</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="benefits-grid">
+        <div class="benefit-card">
+          <div class="benefit-icon">🕒</div>
+          <h3>Economia de tempo</h3>
+          <p>Tarefas repetitivas deixam de ser feitas manualmente.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">💸</div>
+          <h3>Redução de custos</h3>
+          <p>Menos tempo gasto vira menos custo operacional.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">⚠️</div>
+          <h3>Menos erros</h3>
+          <p>Evita falhas humanas como digitação errada ou esquecimento.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="benefit-icon">📈</div>
+          <h3>Escalabilidade</h3>
+          <p>O negócio cresce sem precisar aumentar a equipe proporcionalmente.</p>
+        </div>
+      </div>
+
+      <div class="frase-venda">
+        <span class="fv-label">💬 Frase de venda</span>
+        <p>"Você troca trabalho manual por automação e ganha <strong>velocidade</strong> e <strong>segurança</strong>."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 2: OPORTUNIDADES -->
+  <section id="parte2" class="section section-dark">
+    <div class="container">
+      <div class="section-tag light">Parte 02</div>
+      <h2 class="section-title light">Identificar oportunidades</h2>
+      <p class="section-desc light">Você não precisa entender de tecnologia. Basta ouvir os sinais certos.</p>
+
+      <div class="signals-block">
+        <h3 class="block-title light">🚨 Frases do cliente que indicam oportunidade</h3>
+        <div class="signals-grid">
+          <div class="signal-pill">"A gente faz isso <strong>manualmente</strong>."</div>
+          <div class="signal-pill">"Precisa <strong>exportar planilha</strong>."</div>
+          <div class="signal-pill">"Tem que <strong>copiar e colar</strong>."</div>
+          <div class="signal-pill">"Às vezes <strong>dá erro</strong>."</div>
+          <div class="signal-pill">"<strong>Demora</strong> pra atualizar."</div>
+          <div class="signal-pill">"O cliente <strong>liga pra saber</strong> o status."</div>
+        </div>
+      </div>
+
+      <div class="questions-block">
+        <h3 class="block-title light">❓ Perguntas que você deve fazer</h3>
+        <div class="questions-list">
+          <div class="q-item">
+            <span class="q-num">Q1</span>
+            <span>Onde esse processo <strong>começa</strong>?</span>
+          </div>
+          <div class="q-item">
+            <span class="q-num">Q2</span>
+            <span>Para onde essa informação <strong>vai</strong>?</span>
+          </div>
+          <div class="q-item">
+            <span class="q-num">Q3</span>
+            <span>Quem <strong>faz isso</strong> hoje?</span>
+          </div>
+          <div class="q-item">
+            <span class="q-num">Q4</span>
+            <span>Quanto <strong>tempo leva</strong>?</span>
+          </div>
+          <div class="q-item">
+            <span class="q-num">Q5</span>
+            <span>Já <strong>deu erro</strong> alguma vez?</span>
+          </div>
+        </div>
+        <div class="tip-box">
+          ✅ Essas perguntas transformam uma conversa comum em um <strong>caso claro de economia de tempo, redução de erros e ganho de velocidade.</strong>
+        </div>
+      </div>
+
+      <!-- EXEMPLOS REAIS DAS SCREENSHOTS -->
+      <h3 class="block-title light" style="margin-top:3rem">📱 Exemplos reais de integrações ativas</h3>
+      <div class="examples-grid">
+
+        <div class="example-card">
+          <div class="ex-tag">Financeiro</div>
+          <div class="ex-icon">📄</div>
+          <h4>Segunda via de boleto</h4>
+          <p>O cliente digita o CPF/CNPJ no WhatsApp e recebe a linha digitável + Pix copia e cola em segundos, sem atendente humano.</p>
+          <div class="ex-flow">
+            <span>Cliente digita CPF</span>
+            <span class="ex-arrow">→</span>
+            <span>Sistema consulta</span>
+            <span class="ex-arrow">→</span>
+            <span>Boleto enviado</span>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="ex-tag">Logística</div>
+          <div class="ex-icon">🚚</div>
+          <h4>Rastreio de carga</h4>
+          <p>O cliente informa o CPF e a nota fiscal. O sistema retorna data prevista de entrega, ocorrências e histórico de movimentação.</p>
+          <div class="ex-flow">
+            <span>Informe NF</span>
+            <span class="ex-arrow">→</span>
+            <span>Consulta SEFAZ</span>
+            <span class="ex-arrow">→</span>
+            <span>Status em tempo real</span>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="ex-tag">Crédito</div>
+          <div class="ex-icon">💰</div>
+          <h4>Antecipação de FGTS</h4>
+          <p>O cliente autoriza a consulta no app FGTS, o sistema identifica o saldo disponível e conduz o cadastro da proposta automaticamente.</p>
+          <div class="ex-flow">
+            <span>Autorização FGTS</span>
+            <span class="ex-arrow">→</span>
+            <span>Saldo liberado</span>
+            <span class="ex-arrow">→</span>
+            <span>Proposta cadastrada</span>
+          </div>
+        </div>
+
+        <div class="example-card">
+          <div class="ex-tag">Serviços</div>
+          <div class="ex-icon">📅</div>
+          <h4>Agendamentos</h4>
+          <p>O cliente escolhe data e horário diretamente no WhatsApp. O sistema confirma e registra automaticamente na agenda.</p>
+          <div class="ex-flow">
+            <span>Escolhe horário</span>
+            <span class="ex-arrow">→</span>
+            <span>Verifica agenda</span>
+            <span class="ex-arrow">→</span>
+            <span>Confirma e registra</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 3: COMO EXPLICAR -->
+  <section id="parte3" class="section">
+    <div class="container">
+      <div class="section-tag">Parte 03</div>
+      <h2 class="section-title">Como explicar e vender</h2>
+      <p class="section-desc">Evite termos técnicos. Foque no resultado que o cliente vai sentir.</p>
+
+      <div class="translation-block">
+        <h3 class="block-title">🔄 Tradutor de linguagem técnica</h3>
+        <div class="translation-list">
+          <div class="trans-item">
+            <div class="trans-bad">
+              <span class="trans-label">❌ Não diga</span>
+              <span>"Integração via API"</span>
+            </div>
+            <div class="trans-arrow">→</div>
+            <div class="trans-good">
+              <span class="trans-label">✅ Diga</span>
+              <span>"Os sistemas vão trocar informações automaticamente."</span>
+            </div>
+          </div>
+          <div class="trans-item">
+            <div class="trans-bad">
+              <span class="trans-label">❌ Não diga</span>
+              <span>"Automação de fluxo de dados"</span>
+            </div>
+            <div class="trans-arrow">→</div>
+            <div class="trans-good">
+              <span class="trans-label">✅ Diga</span>
+              <span>"O processo acontece sozinho, sem intervenção."</span>
+            </div>
+          </div>
+          <div class="trans-item">
+            <div class="trans-bad">
+              <span class="trans-label">❌ Não diga</span>
+              <span>"Webhook com callback assíncrono"</span>
+            </div>
+            <div class="trans-arrow">→</div>
+            <div class="trans-good">
+              <span class="trans-label">✅ Diga</span>
+              <span>"Assim que acontecer, o sistema avisa na hora."</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="script-card">
+        <div class="script-header">
+          <span>🗣️</span>
+          <span>Script de venda — simples e eficaz</span>
+        </div>
+        <div class="script-body">
+          <p>"Hoje você faz esse processo <strong>manualmente</strong>, certo?"</p>
+          <p class="script-pause">⏸ aguarde confirmação do cliente</p>
+          <p>"Com a integração, isso passa a acontecer <strong>automaticamente</strong> — sem erro, em segundos, e sem precisar de ninguém na operação."</p>
+          <p class="script-pause">⏸ reforce o benefício principal para aquele cliente</p>
+          <p>"Você ganha <strong>tempo</strong>, reduz <strong>custo</strong> e o seu cliente fica mais <strong>satisfeito</strong>."</p>
+        </div>
+      </div>
+
+      <div class="objections-block">
+        <h3 class="block-title">🛡️ Objeções comuns e como responder</h3>
+        <div class="obj-list">
+          <div class="obj-item">
+            <div class="obj-q">"Meu sistema vai junto?"</div>
+            <div class="obj-a">Precisamos verificar se ele possui API. Na maioria dos casos, sim — e se não tiver, existem alternativas.</div>
+          </div>
+          <div class="obj-item">
+            <div class="obj-q">"Vai ser complicado de implantar?"</div>
+            <div class="obj-a">Nosso time técnico cuida de tudo. Você só nos passa as informações que precisamos e a gente faz acontecer.</div>
+          </div>
+          <div class="obj-item">
+            <div class="obj-q">"E se der algum problema?"</div>
+            <div class="obj-a">Configuramos um fluxo de fallback para que o cliente seja avisado ou direcionado para um atendente humano automaticamente.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTE 4: COLETAR INFORMAÇÕES -->
+  <section id="parte4" class="section section-accent">
+    <div class="container">
+      <div class="section-tag">Parte 04</div>
+      <h2 class="section-title">Coletar informações para o time técnico</h2>
+      <p class="section-desc">Quanto mais completo o levantamento, mais rápido o desenvolvimento.</p>
+
+      <div class="checklist-block">
+        <h3 class="block-title">🧾 Checklist obrigatório</h3>
+        <div class="checklist">
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <span>Qual sistema será integrado?</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <span>O cliente tem acesso a esse sistema?</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <span>Esse sistema possui API?</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <span>O que exatamente deve acontecer?</span>
+          </label>
+          <label class="check-item">
+            <input type="checkbox" />
+            <span class="check-box"></span>
+            <span>Quando isso deve acontecer (gatilho)?</span>
+          </label>
+        </div>
+        <div class="check-progress-bar">
+          <div class="check-progress-fill" id="progressFill"></div>
+        </div>
+        <div class="check-progress-label" id="progressLabel">0 de 5 concluídos</div>
+      </div>
+
+      <div class="form-block">
+        <h3 class="block-title">📝 Modelo rápido de levantamento</h3>
+        <p style="color:var(--text-muted);margin-bottom:1.5rem;font-size:.9rem">Preencha durante a call com o cliente</p>
+        <div class="form-grid">
+          <div class="form-field">
+            <label>Sistema A (origem)</label>
+            <input type="text" placeholder="Ex: ERP da empresa, sistema de boletos..." />
+          </div>
+          <div class="form-field">
+            <label>Sistema B (destino)</label>
+            <input type="text" placeholder="Ex: WhatsApp, chatbot, CRM..." />
+          </div>
+          <div class="form-field full">
+            <label>Evento que dispara (quando acontece)</label>
+            <input type="text" placeholder="Ex: quando o cliente digitar o CPF no chat..." />
+          </div>
+          <div class="form-field full">
+            <label>O que precisa ser enviado (quais informações)</label>
+            <textarea placeholder="Ex: linha digitável, Pix copia e cola, data de vencimento..."></textarea>
+          </div>
+        </div>
+        <button class="copy-btn" id="copyBtn" onclick="copyForm()">📋 Copiar resumo para enviar ao time técnico</button>
+        <div id="copyMsg" class="copy-msg" style="display:none">✅ Resumo copiado! Cole no seu canal de comunicação.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUMO FINAL -->
+  <section class="section final-section">
+    <div class="container">
+      <h2 class="section-title center">Resumo final</h2>
+      <p class="section-desc center">Integração é sobre eliminar trabalho manual.</p>
+      <div class="final-cards">
+        <div class="final-card">
+          <div class="final-num">🎯</div>
+          <h3>Você não está vendendo tecnologia</h3>
+          <p>Você está vendendo <strong>eficiência</strong>, <strong>segurança</strong> e <strong>crescimento</strong>.</p>
+        </div>
+        <div class="final-card">
+          <div class="final-num">👂</div>
+          <h3>Ouça os sinais</h3>
+          <p>Processo manual, planilha, copiar e colar — <strong>são todas oportunidades</strong>.</p>
+        </div>
+        <div class="final-card">
+          <div class="final-num">🗣️</div>
+          <h3>Fale simples</h3>
+          <p>Troque jargão técnico por <strong>resultado concreto</strong> para o cliente.</p>
+        </div>
+        <div class="final-card">
+          <div class="final-num">📋</div>
+          <h3>Leve o levantamento</h3>
+          <p>Com as informações certas, o time técnico <strong>desenvolve rápido e sem retrabalho</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Guia Prático de Integrações · ChatBot & IA Omnichannel</p>
+  </footer>
+
+  <!-- BACK TO TOP BUTTON -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Voltar ao início">
+    ↑
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
