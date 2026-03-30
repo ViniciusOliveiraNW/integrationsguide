@@ -7,7 +7,7 @@ const revealEls = document.querySelectorAll(
   '.section-tag, .section-title, .section-desc, .definition-card, .before-after, ' +
   '.benefits-grid, .frase-venda, .signals-block, .questions-block, .examples-grid, ' +
   '.translation-block, .script-card, .objections-block, .checklist-block, .form-block, ' +
-  '.final-cards, .example-card, .benefit-card, .final-card'
+  '.final-cards, .example-card, .benefit-card, .final-card, .sistemas-search-wrap'
 );
 
 revealEls.forEach(el => el.classList.add('reveal'));
@@ -164,7 +164,76 @@ document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
   });
 });
 
-// ---- BACK TO TOP ----
+
+// ---- SISTEMAS SEARCH ----
+(function() {
+  var input = document.getElementById('sistemaSearch');
+  var clearBtn = document.getElementById('searchClear');
+  var counter = document.getElementById('sistemasCounter');
+  var emptyState = document.getElementById('sistemasEmpty');
+  var emptyTerm = document.getElementById('emptyTerm');
+  var cards = document.querySelectorAll('.sistema-card');
+  var total = cards.length;
+
+  function normalize(str) {
+    return str.toLowerCase()
+      .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+      .replace(/[^a-z0-9 ]/g, '');
+  }
+
+  function updateCounter(visible) {
+    counter.innerHTML = 'Mostrando <strong>' + visible + '</strong> de ' + total + ' sistemas';
+  }
+
+  function filterSistemas(query) {
+    var q = normalize(query.trim());
+    var visible = 0;
+
+    cards.forEach(function(card) {
+      var name = normalize(card.querySelector('.sistema-name').textContent);
+      var category = normalize(card.querySelector('.sistema-category').textContent);
+      var desc = normalize(card.querySelector('.sistema-desc').textContent);
+      var dataAttr = normalize(card.getAttribute('data-sistema') || '');
+
+      if (!q || name.includes(q) || category.includes(q) || desc.includes(q) || dataAttr.includes(q)) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    var grid = document.getElementById('sistemasGrid');
+    if (visible === 0 && q) {
+      emptyState.style.display = 'block';
+      grid.style.display = 'none';
+      emptyTerm.textContent = query.trim();
+    } else {
+      emptyState.style.display = 'none';
+      grid.style.display = '';
+    }
+
+    updateCounter(visible);
+    clearBtn.classList.toggle('visible', q.length > 0);
+  }
+
+  if (input) {
+    input.addEventListener('input', function() {
+      filterSistemas(this.value);
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener('click', function() {
+      input.value = '';
+      filterSistemas('');
+      input.focus();
+    });
+  }
+
+  updateCounter(total);
+})();
+
 var backToTop = document.getElementById('backToTop');
 window.addEventListener('scroll', function() {
   if (window.scrollY > 400) {

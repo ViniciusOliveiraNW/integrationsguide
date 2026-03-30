@@ -1075,6 +1075,236 @@ body {
   line-height: 1.6;
 }
 
+/* ---- SISTEMAS QUE INTEGRAMOS ---- */
+.sistemas-search-wrap {
+  margin-bottom: 2rem;
+}
+
+.sistemas-search-bar {
+  display: flex;
+  align-items: center;
+  background: #0d1f3c;
+  border: 1.5px solid rgba(15,120,255,.45);
+  border-radius: 14px;
+  padding: .9rem 1.4rem;
+  gap: .9rem;
+  transition: border-color .2s, box-shadow .2s;
+  margin-bottom: .7rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+.sistemas-search-bar:focus-within {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(15,120,255,.14), 0 2px 16px rgba(0,0,0,.35);
+}
+
+.search-icon {
+  font-size: 1.15rem;
+  flex-shrink: 0;
+  opacity: .9;
+}
+
+.sistemas-search-bar input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 1rem;
+}
+
+.sistemas-search-bar input::placeholder {
+  color: #4e607e;
+}
+
+.search-clear {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: .9rem;
+  cursor: pointer;
+  padding: .2rem .4rem;
+  border-radius: 6px;
+  transition: color .15s, background .15s;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-clear.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.search-clear:hover {
+  color: var(--text);
+  background: rgba(255,255,255,.06);
+}
+
+.sistemas-counter {
+  font-size: .82rem;
+  color: var(--text-muted);
+}
+
+.sistemas-counter strong {
+  color: var(--accent);
+}
+
+.sistemas-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+@media (max-width: 900px) {
+  .sistemas-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .sistemas-grid { grid-template-columns: 1fr; }
+}
+
+.sistema-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: .85rem;
+  transition: border-color .2s, transform .2s, box-shadow .2s;
+  cursor: default;
+}
+
+.sistema-card:hover {
+  border-color: rgba(15,120,255,.28);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 32px rgba(15,120,255,.08);
+}
+
+.sistema-card.hidden {
+  display: none;
+}
+
+.sistema-card-top {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+}
+
+.sistema-icon {
+  font-size: 1.6rem;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg3);
+  border-radius: 12px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+}
+
+.sistema-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sistema-name {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: .97rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sistema-category {
+  font-size: .75rem;
+  color: var(--text-muted);
+  margin-top: .15rem;
+}
+
+.sistema-badge-status {
+  font-size: .68rem;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: .28rem .75rem;
+  border-radius: 100px;
+  flex-shrink: 0;
+}
+
+.sistema-badge-status.integrado {
+  background: rgba(15,120,255,.12);
+  color: var(--accent);
+  border: 1px solid rgba(15,120,255,.25);
+}
+
+.sistema-desc {
+  font-size: .84rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ---- EMPTY STATE ---- */
+.sistemas-empty {
+  text-align: center;
+  padding: 3.5rem 2rem;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.sistemas-empty h3 {
+  font-family: var(--font-head);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: .5rem;
+  color: var(--text);
+}
+
+.sistemas-empty > p {
+  color: var(--text-muted);
+  font-size: .95rem;
+  margin-bottom: 2rem;
+}
+
+.empty-alert {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1rem;
+  background: rgba(15,120,255,.07);
+  border: 1px solid rgba(15,120,255,.2);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.8rem;
+  text-align: left;
+  max-width: 540px;
+}
+
+.alert-icon {
+  font-size: 1.6rem;
+  flex-shrink: 0;
+  margin-top: .1rem;
+}
+
+.empty-alert strong {
+  display: block;
+  font-family: var(--font-head);
+  font-size: .95rem;
+  margin-bottom: .35rem;
+  color: var(--text);
+}
+
+.empty-alert p {
+  font-size: .84rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
 /* ---- FOOTER ---- */
 .footer {
   background: var(--bg2);
